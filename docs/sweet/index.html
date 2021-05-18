@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <title>SweetAlert</title>
+
+  <link rel="stylesheet" type="text/css" href="./example.css">
+
+  <!-- This is what you need -->
+  <script src="sweet-alert.js"></script>
+  <link rel="stylesheet" type="text/css" href="sweet-alert.css">
+  <!--.......................-->
+
+</head>
+
+<body>
+
+<h1>Sweet Alert</h1>
+
+<div class="showcase normal">
+	<h4>Normal alert</h4>
+	<button>Show error message</button>
+
+	<h5>Code:</h5>
+	<pre><span class="func">alert</span>(<span class="str">"Oops... Something went wrong!"</span>);
+
+	</pre>
+
+	<div class="vs-icon"></div>
+</div>
+
+<div class="showcase sweet">
+	<h4>Sweet Alert</h4>
+	<button>Show error message</button>
+
+	<h5>Code:</h5>
+	<pre>sweetAlert(<span class="str">"Oops..."</span>, <span class="str">"Something went wrong!"</span>, <span class="str">"error"</span>);</pre>
+</div>
+
+
+<!-- Examples -->
+<h3>Примеры</h3>
+
+<ul class="examples">
+
+	<li class="message">
+		<div class="ui">
+			<p>Обычное сообщение</p>
+			<button>Кликни!</button>
+		</div>
+		<pre>swal(<span class="str">"А вот и сообщение!"</span>)</pre>
+	</li>
+
+	<li class="title-text">
+		<div class="ui">
+			<p>Заголовок и текст</p>
+			<button>Кликни!</button>
+		</div>
+		<pre>swal(<span class="str">"А вот и сообщение!"</span>, <span class="str">"Неплохо, да?"</span>)</pre>
+	</li>
+
+	<li class="success">
+		<div class="ui">
+			<p>Сообщение об успехе!</p>
+			<button>Кликни!</button>
+		</div>
+		<pre>swal(<span class="str">"Отлично!"</span>, <span class="str">"Вы нажали на кнопку!"</span>, <span class="str">"успех"</span>)</pre>
+	</li>
+
+	<li class="warning">
+		<div class="ui">
+			<p>Сообщение об ошибке с кнопкой подтвержденя</p>
+			<button>Кликни!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Вы уверены?"</span>,
+&nbsp;&nbsp;text: <span class="str">"Удаление файла!"</span>,
+&nbsp;&nbsp;type: <span class="str">"warning"</span>,
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;confirmButtonColor: <span class="str">"#DD6B55"</span>,
+&nbsp;&nbsp;confirmButtonText: <span class="str">"Да, удалить!"</span>
+},
+<span class="func"><i>function</i></span>(){
+&nbsp;&nbsp;<span class="func">alert</span>(<span class="str">"Удалён!"</span>);
+});</pre>
+	</li>
+
+	<li class="custom-icon">
+		<div class="ui">
+			<p>Сообщение с иконкой</p>
+			<button>Кликни!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Круть!"</span>,
+&nbsp;&nbsp;text: <span class="str">"Своя иконка."</span>,
+&nbsp;&nbsp;imageUrl: <span class="str">"images/thumbs-up.jpg"</span>
+});</pre>
+	</li>
+
+</ul>
+
+
+
+
+<script>
+document.querySelector('.showcase.normal button').onclick = function(){
+	alert("Oops... Something went wrong!");
+};
+
+document.querySelector('.showcase.sweet button').onclick = function(){
+	swal("Oops...", "Something went wrong!", "error");
+};
+
+document.querySelector('ul.examples li.message button').onclick = function(){
+	swal("Here's a message!");
+};
+
+document.querySelector('ul.examples li.title-text button').onclick = function(){
+	swal("Here's a message!", "It's pretty, isn't it?")
+};
+
+document.querySelector('ul.examples li.success button').onclick = function(){
+	swal("Good job!", "You clicked the button!", "success");
+};
+
+document.querySelector('ul.examples li.warning button').onclick = function(){
+	swal({
+		title: "Are you sure?",
+		text: "You will not be able to recover this imaginary file!",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Yes, delete it!'
+	},
+	function(){
+		alert("Deleted!");
+	});
+};
+
+document.querySelector('ul.examples li.custom-icon button').onclick = function(){
+	swal({
+		title: "Sweet!",
+		text: "Here's a custom image.",
+		imageUrl: 'images/thumbs-up.jpg'
+	});
+};
+
+</script>
+
+
+
+</body>
+
+</html>
